@@ -32,8 +32,9 @@
 				<td><%= v.getId() %></td>
 				<td><%= v.getNom() %></td>
 				<td><%= v.getCode_postal() %></td>
+				<td><%= v.getPays() %></td>
 				<td>
-					<a class="btn btn-secondary btn-sm" href="edit?id=<%= v.getId() %>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+					<a class="btn btn-secondary btn-sm" href="EditVilleServlet?id=<%= v.getId() %>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
 					<button class="btn btn-danger btn-sm" onclick="supprimer(<%= v.getId() %>)"><i class="fa fa-trash-o" aria-hidden="true"></i></button> 
 				</td>
 			</tr>

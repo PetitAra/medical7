@@ -50,9 +50,9 @@ public class EditVilleServlet extends HttpServlet {
 
 		System.out.println("Je suis bien dans la méthode post");
 		String nom = request.getParameter("nom");
-		Integer code_postal = request.getIntHeader("code_postal");
 		String pays = request.getParameter("pays");
 
+		int code_postal = Integer.parseInt( request.getParameter("code_postal") );
 		int id = Integer.parseInt(request.getParameter("id"));
 
 		// Mettre à jour le patient en question
