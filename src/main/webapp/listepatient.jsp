@@ -62,8 +62,8 @@
 <script>
 	function supprimer( id ){
 		if( confirm("Êtes vous sur ?") ){
-			console.log('delete?id='+id  );
-			window.location = 'delete?id='+id; 
+			console.log('DeletePatientServlet?id='+id  );
+			window.location = 'DeletePatientServlet?id='+id; 
 		}
 	}
 </script>

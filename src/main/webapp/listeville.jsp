@@ -49,8 +49,8 @@
 <script>
 	function supprimer( id ){
 		if( confirm("Êtes vous sur ?") ){
-			console.log('delete?id='+id  );
-			window.location = 'delete?id='+id; 
+			console.log('DeleteVilleServlet?id='+id  );
+			window.location = 'DeleteVilleServlet?id='+id; 
 		}
 	}
 </script>

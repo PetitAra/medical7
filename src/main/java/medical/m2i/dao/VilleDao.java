@@ -59,4 +59,31 @@ public class VilleDao {
 		
 	}
 
+	public Ville getVille(int id) {
+		return em.find(Ville.class,id);
+	}
+
+	public void editVille(int id, String nom, Integer code_postal, String pays) {
+		Ville v = em.find( Ville.class , id );
+		EntityTransaction tx = em.getTransaction();
+		
+		v.setNom(nom);
+		v.setCode_postal(code_postal);
+		v.setPays(pays);
+		
+		
+		// Début des modifications
+		try {
+			tx.begin();
+			em.persist(v);
+			tx.commit();
+		} catch (Exception e) {
+			tx.rollback();
+		} finally {
+			// em.close();
+			// emf.close();
+		}
+		
+	}
+
 }
