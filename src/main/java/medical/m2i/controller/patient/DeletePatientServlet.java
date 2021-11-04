@@ -36,7 +36,7 @@ public class DeletePatientServlet extends HttpServlet {
 		
 		int id = Integer.parseInt(request.getParameter("id"));
 		PatientDao patientDao = new PatientDao();
-		patientDao.deletePatients(id);
+		patientDao.deletePatient(id);
 		
 		response.sendRedirect(request.getContextPath() + "/ListPatientServlet");
 		

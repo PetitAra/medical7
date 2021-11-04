@@ -71,6 +71,8 @@ public class VilleDao {
 		v.setCode_postal(code_postal);
 		v.setPays(pays);
 		
+		System.out.println( "edit ville" + nom + ", " + code_postal + " : " + pays );
+		
 		
 		// Début des modifications
 		try {
@@ -79,10 +81,35 @@ public class VilleDao {
 			tx.commit();
 		} catch (Exception e) {
 			tx.rollback();
+			System.out.println("Erreur" );
+			e.getStackTrace(); 
+		} finally {
+			// em.close(); 
+			// emf.close();
+		}
+		
+	}
+
+	public int registerVille(Ville ville) {
+		int id = 0;
+
+		// Récupération d’une transaction
+		EntityTransaction tx = em.getTransaction();
+		// Début des modifications
+		try {
+			tx.begin();
+			em.persist(ville);
+			tx.commit();
+			id = ville.getId();
+		} catch (Exception e) {
+
+			tx.rollback();
 		} finally {
 			// em.close();
 			// emf.close();
 		}
+		System.out.println("id de la ville : " + id);
+		return id;
 		
 	}
 

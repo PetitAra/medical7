@@ -60,6 +60,6 @@ public class EditVilleServlet extends HttpServlet {
 		System.out.println("ok dans edit ville" + id);
 		villeDao.editVille(id, nom, code_postal, pays);
 
-		response.sendRedirect(request.getContextPath() + "/ListVilleServlet");
+		response.sendRedirect(request.getContextPath() + "/ListVilleServlet"); 
 	}
 }

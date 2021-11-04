@@ -77,10 +77,10 @@ public class PatientServlet extends HttpServlet {
 //		out.println("<html >");
 //		out.println("<body >");
 //		out.println("<h1 > Bonjour " + prenom + " " + nom + " ! </h1 >");
-//		out.println("<p>Vous êtes né le : " + naissance + "</p>"); // la date de naissance
-//		out.println("<p>Votre adresse est : " + adresse + "</p>"); // � la place des **** : adresse + pays + ville
-//		out.println("<p>Votre pays est : " + pays + "</p>"); // � la place des **** : adresse + pays + ville
-//		out.println("<p>Votre ville est : " + ville + "</p>"); // � la place des **** : adresse + pays + ville
+//		out.println("<p>Vous Ãªtes nÃ© le : " + naissance + "</p>"); // la date de naissance
+//		out.println("<p>Votre adresse est : " + adresse + "</p>"); // ï¿½ la place des **** : adresse + pays + ville
+//		out.println("<p>Votre pays est : " + pays + "</p>"); // ï¿½ la place des **** : adresse + pays + ville
+//		out.println("<p>Votre ville est : " + ville + "</p>"); // ï¿½ la place des **** : adresse + pays + ville
 //		out.println(" </body >");
 //		out.println(" </html >");
 

@@ -43,7 +43,7 @@
 	%>
 </tbody>
 </table>
-
+<a href="villeregister.jsp" class="btn btn-primary">Ajouter une ville</a>
 </main>
 <%@ include file="fragments/footer.jsp" %>
 

@@ -20,7 +20,6 @@ import medical.m2i.model.Ville;
 
 public class PatientDao {
 
-	private Properties db = new Properties();
 	EntityManagerFactory emf;
 	EntityManager em;
 
@@ -60,34 +59,29 @@ public class PatientDao {
 
 	}
 
-	public void deletePatients(int id) {
-		// TODO Auto-generated method stub
-		Patient p = em.find(Patient.class,id);
-		// Récupération d’une transaction
-				EntityTransaction tx = em.getTransaction();
-				// Début des modifications
-				try {
-					tx.begin();
-					em.remove(p);
-					tx.commit();
-				} catch (Exception e) {
-
-					tx.rollback();
-				} finally {
-					// em.close();
-					// emf.close();
-				}
-				System.out.println("id du patient supprimé: " + id);
-				
+	public void deletePatient(int id) {
+		Patient p = em.find( Patient.class , id );
+		EntityTransaction tx = em.getTransaction();
+		// D�but des modifications
+		try {
+			tx.begin();
+			em.remove(p);
+			tx.commit();
+		} catch (Exception e) {
+			tx.rollback();
+		} finally {
+			// em.close();
+			// emf.close();
+		}
 	}
 
 	public Patient getPatient(int id) {
-		return em.find(Patient.class,id);
-		
+		// TODO Auto-generated method stub
+		return em.find( Patient.class , id ); 
 	}
 
-	public void editPatient(int id , String nom, String prenom, String datenaissance, String adresse) {
-		 
+	public void editPatient(int id , String nom, String prenom, String datenaissance, String adresse , String pays , String ville) {
+ 
 		Patient p = em.find( Patient.class , id );
 		EntityTransaction tx = em.getTransaction();
 		
@@ -95,6 +89,8 @@ public class PatientDao {
 		p.setPrenom(prenom);
 		p.setNaissance(datenaissance);
 		p.setAdresse(adresse);
+		p.setPays(pays);
+		p.setVille(ville);
 		
 		// Début des modifications
 		try {
@@ -108,4 +104,6 @@ public class PatientDao {
 			// emf.close();
 		}
 	}
+
+	
 }
