@@ -7,9 +7,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 
 @Entity
-//@NamedQuery(name="Ville.findAllByPays",query="SELECT "
+@NamedQueries({
+    @NamedQuery(name="Ville.findByPaysName",
+                query="SELECT v FROM Ville v WHERE v.pays = :name"),
+}) 
 public class Ville implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -23,10 +28,18 @@ public class Ville implements Serializable {
 
 	@Column(nullable = false, length = 150)
 	private Integer code_postal;
-
-	@Column
-	private String pays;
 	
+	@Column(nullable = false, length = 150)
+	private String pays;
+
+	public String getPays() {
+		return pays;
+	}
+
+	public void setPays(String pays) {
+		this.pays = pays;
+	}
+
 	public Ville() {
 		// TODO Auto-generated constructor stub
 	}
@@ -36,12 +49,11 @@ public class Ville implements Serializable {
 	 * @param nom
 	 * @param code_postal
 	 */
-	public Ville(Integer id, String nom, Integer code_postal, String pays) {
+	public Ville(Integer id, String nom, Integer code_postal) {
 		super();
 		this.id = id;
 		this.nom = nom;
 		this.code_postal = code_postal;
-		this.pays = pays;
 	}
 
 	/**
@@ -86,19 +98,4 @@ public class Ville implements Serializable {
 		this.code_postal = code_postal;
 	}
 
-	/**
-	 * @return the pays
-	 */
-	public String getPays() {
-		return pays;
-	}
-
-	/**
-	 * @param pays the pays to set
-	 */
-	public void setPays(String pays) {
-		this.pays = pays;
-	}
-
-	
 }
