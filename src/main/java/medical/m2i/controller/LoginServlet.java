@@ -1,6 +1,7 @@
 package medical.m2i.controller;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import medical.m2i.dao.UserDao;
+import medical.m2i.model.User;
 
 /**
  * Servlet implementation class LoginServlet
@@ -45,17 +47,23 @@ public class LoginServlet extends HttpServlet {
 		System.out.println( "username reçu = " + username );
 		
 		UserDao udao = new UserDao();
-		
+
 		try {
 			if( udao.getUsersByUsernameAndPassword(username, password).size() > 0 ) {
+
+			List<User> luser = udao.getUsersByUsernameAndPassword(username, password); 
+
+			if( luser.size() > 0 ) {
 				// authentification ok, redirection vers la liste des patients 
 				//confirmation d'authentification
+				request.getSession().setAttribute("user", luser.get(0));
 				response.getWriter().println("ok");
-				
+
 			}else {
 				// Auth ko,on affiche de nouveau le form d'authentification
 				// annulation de l'authentification 
 				response.getWriter().println("ko");
+			}
 			}
 		} catch (ClassNotFoundException | IOException e) {
 			// TODO Auto-generated catch block

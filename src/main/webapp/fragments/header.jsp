@@ -17,13 +17,14 @@
           <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="listepatient.jsp">Patient</a>
+          <a class="nav-link" href="ListPatientServlet">Patient</a></li>
         </li>
+        
         <li class="nav-item">
           <a class="nav-link" href="listerdv.jsp">RDV</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="listeville.jsp">Ville</a>
+          <a class="nav-link" class="nav-item" href="ListVilleServlet">Ville</a>
         </li>
         
         
@@ -31,4 +32,6 @@
     </div>
   </div>
 </nav>
+
+Bienvenue ${user.name}
   </header>

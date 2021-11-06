@@ -20,14 +20,10 @@ import medical.m2i.model.Ville;
 
 public class VilleDao {
 
-	EntityManagerFactory emf;
 	EntityManager em;
 
 	public VilleDao() {
-		super();
-		emf = Persistence.createEntityManagerFactory("medical7");
-		em = emf.createEntityManager();
-
+		em = DbConnection.getInstance(); 
 	}
 
 	public List<Ville> getVilles() throws ClassNotFoundException {

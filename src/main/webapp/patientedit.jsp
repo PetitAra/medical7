@@ -1,3 +1,5 @@
+
+<%@ page errorPage="/mapagederreur.jsp" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="java.util.*"%>
@@ -29,7 +31,7 @@ p = (Patient) request.getAttribute("patientparam");
 <body>
 	<%@ include file="fragments/header.jsp"%>
 	<main class="container">
-		<h1>Formulaire d'édition patient</h1>
+		<h1>Formulaire d'édition patient**</h1>
 		<hr>
 		<div></div>
 		<form name="monForm" action="" method="post">

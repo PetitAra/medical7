@@ -3,6 +3,8 @@
 <%@ page import="java.util.*" %>
 <%@ page import="medical.m2i.model.*" %>
 <%@ page import="medical.m2i.dao.PatientDao" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %> 
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,10 +12,20 @@
 <title>Liste des patients</title>
 </head>
 <body>
+
+
 <%@ include file="fragments/header.jsp" %>
 <main class="container">
 <h3>Liste des patients</h3>
 
+<c:out value= "Bonjour"/>
+<jsp:useBean id="marin" scope="request" 
+             class="medical.m2i.model.Patient">
+             <jsp:setProperty name="marin" property="nom"    value="Surcouf"/>
+             </jsp:useBean>
+
+ ${marin.nom } 
+ 
 <table class="table table-striped">
 <thead>
 	<th>ID</th>
